@@ -2,26 +2,29 @@
   "name": "googlypress",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "private": true,
   "scripts": {
     "lite": "lite-server",
     "scss": "sass css:css",
     "start": "npm run watch:all",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch:scss": "onchange 'css/*.scss' -- npm run scss",
     "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
     "clean": "rimraf dist",
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
-    "imagemin": "imagemin img/* -o dist/img",
-    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build": "npm run clean && npm run imagemin && npm run copyfonts"
+    "imagemin": "imagemin images/* -o dist/images",
+    "imagemin2": "imagemin images/puppy_love/* -o dist/images/puppy_love/",
+    "usemin": "usemin puppy-love.html -d dist --htmlmin -o dist/puppy-love.html && usemin beatrix-potter.html -d dist --htmlmin -o dist/beatrix-potter.html && usemin happy-books.html -d dist --htmlmin -o dist/happy-books.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "webpack": "webpack",
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.2",
     "bootstrap-social": "^5.1.1",
-    "jquery": "^3.6.3"
+    "jquery": "^3.6.3",
+    "usemin": "^0.6.0",
+    "usemin-cli": "^0.6.0"
   },
   "devDependencies": {
     "copyfiles": "^2.2.0",
@@ -31,6 +34,8 @@
     "parallelshell": "^3.0.1",
     "rimraf": "^3.0.2",
     "sass": "^1.54.4",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1"
   }
 }
