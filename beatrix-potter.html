@@ -47,10 +47,11 @@
               <p>Squeal. Brussel sprouts cow, rabbits a gates a, storage shed fences. Oranges cucumbers rhubarb gourds watermelon. bull bowels cat chicken cow, calf donkey duck. Brussel sprouts cow, rabbits a gates a, storage shed fences. Utters are weathervane foal est. In eggplant, quonset is grain bins, grain trucks quonse.</p>              
                 <div id="books"></div>
                 <script>
-                  //let sortedCatalog = entireCatalog(catalogListings);
-                  //let bookCatalog = sortedCatalog.map(title => new Book(title).bookListing());
+                  let sortedCatalog = entireCatalog(catalogListings);
+                  //console.log(sortedCatalog);
+                  let bookCatalog = sortedCatalog.map(title => new Book(title).bookListing('Peter Rabbit'));
                   //console.log(bookCatalog.join);
-                  //document.getElementById('books').innerHTML = bookCatalog.join(' ');
+                  document.getElementById('books').innerHTML = bookCatalog.join(' ');
                 </script>
           </main>
         </div>

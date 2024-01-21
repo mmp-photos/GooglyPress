@@ -43,8 +43,9 @@
               <div id="books"></div>
                 <script>
                   let sortedCatalog = entireCatalog(catalogListings);
-                  let bookCatalog = sortedCatalog.map(title => new Book(title).bookListing());
-                  console.log(bookCatalog.join);
+                  //console.log(sortedCatalog);
+                  let bookCatalog = sortedCatalog.map(title => new Book(title).bookListing('Puppy Love'));
+                  //console.log(bookCatalog.join);
                   document.getElementById('books').innerHTML = bookCatalog.join(' ');
                 </script>
           </main>
