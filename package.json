@@ -6,15 +6,17 @@
   "scripts": {
     "lite": "lite-server",
     "scss": "sass css:css",
+    "scss-build": "sass styles:dist/styles",
+    "copyjs": "copyfiles js/*.js dist/",
     "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:scss": "onchange 'css/*.scss' -- npm run scss",
     "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
     "clean": "rimraf dist",
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
-    "imagemin": "imagemin img/* -o dist/img",
-    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build": "npm run clean && npm run imagemin && npm run copyfonts"
+    "imagemin": "imagemin imgages/* -o dist/images",
+    "usemin": "usemin about.html -d dist --htmlmin -o dist/about.html && usemin beatrix-potter.html -d dist --htmlmin -o dist/beatrix-potter.html && usemin index.html -d dist --htmlmin -o dist/index.html && usemin catalogPage.html -d dist --htmlmin -o dist/catalogPage.html && usemin happy-books.html -d dist --htmlmin -o dist/happy-books.html && usemin puppy-love.html -d dist --htmlmin -o dist/puppy-love.html",
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin && npm run scss-build && npm run copyjs"
   },
   "author": "",
   "license": "ISC",
