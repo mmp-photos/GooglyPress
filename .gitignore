@@ -2,3 +2,4 @@ node_modules
 overwritten-examples.html
 index2.html
 dist
+.env
