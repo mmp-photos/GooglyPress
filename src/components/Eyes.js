@@ -1,12 +1,8 @@
-import purpleLogo from '../assets/images/purple_logo.jpg';
+import '../assets/styles/eyeStyles.css'
 
 const Eyes = () => {
     return(
-        <div className="face" style={{backgroundColor: "green", backgroundImage: `url(${purpleLogo})`}}>
-        <div className="eyes">
-            <div className="eye"></div>
-            <div className="eye"></div>
-        </div>
+        <div className="face">
         </div>
     )
 };

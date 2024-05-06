@@ -6,7 +6,7 @@ const DogAPI = () => {
     useEffect(() => {
         const fetchCatImage = async () => {
           try {
-            const response = await fetch('https://api.thedogapi.com/v1/images/search', {
+            const response = await fetch('https://api.thedogapi.com/v1/images/search?breed_ids=50', {
               headers: {
                 'x-api-key': 'REACT_APP_DOG_API_KEY' // Replace YOUR_API_KEY with your actual API key
               }
@@ -14,6 +14,7 @@ const DogAPI = () => {
             const data = await response.json();
             if (data && data.length > 0) {
               setCatImageUrl(data[0].url);
+              console.log(`${data[0]}`)
             }
           } catch (error) {
             console.error('Error fetching cat image:', error);
@@ -26,7 +27,8 @@ const DogAPI = () => {
       
     return(
       <>
-        <img src={catImageUrl} alt="random dog image" />
+        <img className="dog-api" src={catImageUrl} alt="random dog image" />
+        <p>Featured Dog!</p>
       </>
     )
 };

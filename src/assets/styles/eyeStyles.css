@@ -69,11 +69,9 @@
     
     /***** INDEX.HTML ANIMATION STYLES *****/
     .face {
-      position: relative;
-      width: 600px;
-      height: 320px;
-      background-color: none;
-      background-image: url("purple_logo.jpg");
+      background-image: url('../images/purple_logo.jpg');
+      background-size: cover;
+      aspect-ratio: 2/1;
     }
     
     .eyes {
