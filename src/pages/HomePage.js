@@ -25,7 +25,7 @@ const HomePage = () => {
                     </Container>
                 </Col>
                 <Col md="5">
-                    <DogApi />
+                    <DogApi breed="132" requestType="image" />
                 </Col>
             </Row>
         </Container>

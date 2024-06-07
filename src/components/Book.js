@@ -1,5 +1,6 @@
 import { Col } from 'reactstrap';
 import { Link } from "react-router-dom";
+import BuyButton from './BuyButton';
 
 const Book = (book) => {
     let bookNumber = book[0];
@@ -15,17 +16,13 @@ const Book = (book) => {
     };
 
     return (
-        <Col xs="6" md="3" className="mt-5" style={{border:"3px", borderColor:"white"}}>
+        <Col xs="6" md="3" className="mt-5" style={{display:"flex", border:"3px", borderColor:"white"}}>
             <div className="card" key={bookNumber}>
                 <Link to={`/Book/${bookNumber}`} >
                     <img src={image} alt={breed} />
                 </Link>
-                <div className="card-body">
-                    <h4 className="card-title">{breed}</h4>
-                    <button className="buy" onClick={handleClick}>
-                        Buy Now!
-                    </button>
-                </div>
+                <h4 className="card-title">{breed}</h4>
+                <BuyButton bookID={bookNumber} />
             </div>
         </Col>
     )

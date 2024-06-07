@@ -28,11 +28,8 @@
     color: var(--white);
  }
  button.buy {
+    position: relative;
     background-color: var(--orange);
-    width: 90%;
-    position: absolute;
-    bottom: 12px;
-    right: 5%;
  }
  h4.card-title {
     color: var(--black);
@@ -56,20 +53,20 @@
     margin-left: 62px;
  }
  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
     border-color: orange;
     border-width: 1px;
     border-style: solid;
-    padding: 9px 9px 0 9px;
-    margin-top: 45px;
+    color: var(--black);
+    padding: .75rem;
   }
   .card-body{
-    display: block;
-    padding: 0px;
-    margin: 0px;
+    display: flex;
   }
   .card img {
-    max-width: 90%;
-    margin: auto;
+    max-width: 100%;
   }
   .dog-api{
     max-width: 100%;
@@ -87,4 +84,13 @@
     top: 20px;
     font-size: 1.5rem;
   }
+  #book {
+    color: var(--black);
+  }
   
+  #book img {
+    max-width: 100%; /* Change to 100% for the image to fill its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper display */
+    margin: 0 auto; /* Center the image horizontally */
+  }
