@@ -14,8 +14,8 @@ function App() {
           <Route path="/puppy-love" element = {<CatalogPage collection="PLJ" />} />
           <Route path="/happy-little-books" element = {<CatalogPage collection="HLB" />} />
           <Route path="/beatrix-potter" element = {<CatalogPage collection="BXP" />} />
-          <Route path="/book" element = {<Book/>} />
           <Route path="/book/:bookID" element = {<Book />} />
+          <Route path="/book" element = {<Book/>} />
       </Routes>
     <Footer />
     </>

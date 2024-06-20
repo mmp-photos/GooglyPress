@@ -7,7 +7,7 @@ const BuyButton = ( {bookID} ) => {
     };
 
     return(
-        <button className="buy" onClick={handleClick}>
+        <button onClick={handleClick}>
         Buy Now!
         </button>
     )

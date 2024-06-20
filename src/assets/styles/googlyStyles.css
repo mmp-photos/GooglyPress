@@ -27,9 +27,17 @@
     background: var(--googly-purple);
     color: var(--white);
  }
+ button{
+  background-color: var(--orange);
+  width: 95%;
+  margin: auto;
+  margin-top: 12px;
+ }
  button.buy {
     position: relative;
     background-color: var(--orange);
+    margin-left: 0px;
+    width: 85%;
  }
  h4.card-title {
     color: var(--black);

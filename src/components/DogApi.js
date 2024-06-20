@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const DogAPI = ({ breed, requestType }) => {
+const DogAPI = ({ breed, requestType, bookID }) => {
   const [dogImageUrl, setDogImageUrl] = useState();
   const [breedList, setBreedList] = useState();
 
@@ -18,9 +18,6 @@ const DogAPI = ({ breed, requestType }) => {
         const data = await response.json();
         if (data && data.length > 0) {
           setDogImageUrl(data[0].url);
-          data.forEach(obj => {
-            console.log(obj);
-          });
         }
       } catch (error) {
         console.error('Error fetching dog image:', error);
@@ -31,6 +28,7 @@ const DogAPI = ({ breed, requestType }) => {
   }, [breed]);
 
   useEffect(() => {
+    // console.log(`Breed passed to info function: ${breed}`)
     const fetchBreedInfo = async () => {
       try {
         const response = await fetch(
@@ -53,13 +51,12 @@ const DogAPI = ({ breed, requestType }) => {
     };
 
     fetchBreedInfo();
-  }, [breed, setBreedList]); // Added setBreedList as a dependency
+  }, [breed]);
 
   if (requestType === "image") {
     return (
       <>
-        <img className="dog-api" src={dogImageUrl} alt="random dog image" />
-        <p>Featured Dog!</p>
+        <img className="dog-api" src={dogImageUrl} alt="random dog" />
       </>
     );
   }
@@ -73,7 +70,15 @@ const DogAPI = ({ breed, requestType }) => {
       return(
         <>
           <h2>{breedList.name}</h2>
-          <p>{breedList.temperament}</p>
+          <dl>
+            <dt>Breed group:</dt>
+            <dd>{breedList.breed_group}</dd>
+            <dt>Height:</dt>
+            <dd>{breedList.height.imperial}</dd>
+            <dd>Bred for: {breedList.bred_for}</dd>
+            <dt>Disposition:</dt>
+            <dd>{breedList.temperament}</dd>
+            </dl>
         </>
       )
     }

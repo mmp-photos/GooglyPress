@@ -38,7 +38,7 @@ const CatalogPage = ( {collection} ) => {
         markdownText(collection)
     });
 
-    const filteredCatalog = catalogListings.filter(bookData => bookData[8] === collection);
+    const filteredCatalog = catalogListings.filter(bookData => bookData[1] === collection);
     return (
         <HelmetProvider context={helmetContext}>
         <Helmet>
