@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import BuyButton from './BuyButton';
 
 const DogAPI = ({ breed, requestType, bookID }) => {
   const [dogImageUrl, setDogImageUrl] = useState();
   const [breedList, setBreedList] = useState();
+  const [loading, setLoading] = useState(true);
+  const [bookId, setBookId] = useState();
 
   useEffect(() => {
     const fetchDogImage = async () => {
@@ -16,20 +20,14 @@ const DogAPI = ({ breed, requestType, bookID }) => {
           }
         );
         const data = await response.json();
+        // console.log(data);
         if (data && data.length > 0) {
           setDogImageUrl(data[0].url);
         }
       } catch (error) {
         console.error('Error fetching dog image:', error);
       }
-    };
 
-    fetchDogImage();
-  }, [breed]);
-
-  useEffect(() => {
-    // console.log(`Breed passed to info function: ${breed}`)
-    const fetchBreedInfo = async () => {
       try {
         const response = await fetch(
           `https://api.thedogapi.com/v1/breeds/${breed}`,
@@ -48,10 +46,16 @@ const DogAPI = ({ breed, requestType, bookID }) => {
       } catch (error) {
         console.error('Error fetching breed info:', error);
       }
+      setBookId(bookID);
+      setLoading(false);
     };
 
-    fetchBreedInfo();
-  }, [breed]);
+    fetchDogImage();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   if (requestType === "image") {
     return (
@@ -82,9 +86,24 @@ const DogAPI = ({ breed, requestType, bookID }) => {
         </>
       )
     }
-  } else {
-    return null;
+  } 
+
+  if (requestType === "homepage") {
+    if(!breedList){
+
+    }
+    else{
+      return(
+        <>
+          <Link to={`/Book/${bookID}`} >
+            <img className="dog-api" src={dogImageUrl} alt="random dog" />
+          </Link>
+          <BuyButton bookID={bookId} />
+        </>
+      )
+    }
   }
+  
 };
 
 export default DogAPI;

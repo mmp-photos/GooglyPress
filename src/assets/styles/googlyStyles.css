@@ -29,15 +29,7 @@
  }
  button{
   background-color: var(--orange);
-  width: 95%;
-  margin: auto;
-  margin-top: 12px;
- }
- button.buy {
-    position: relative;
-    background-color: var(--orange);
-    margin-left: 0px;
-    width: 85%;
+  width: 100%;
  }
  h4.card-title {
     color: var(--black);
@@ -70,6 +62,7 @@
     color: var(--black);
     padding: .75rem;
   }
+
   .card-body{
     display: flex;
   }
@@ -78,7 +71,13 @@
   }
   .dog-api{
     max-width: 100%;
-  }  
+    border: solid 4px var(--orange);
+    margin-bottom: 12px;
+  }
+  footer{
+    padding: 62px;
+    padding-top: 9rem;
+  }
   .grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -97,8 +96,8 @@
   }
   
   #book img {
-    max-width: 100%; /* Change to 100% for the image to fill its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure proper display */
-    margin: 0 auto; /* Center the image horizontally */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
   }

@@ -28,7 +28,7 @@ import {
               </NavbarBrand>
             </Col>
             <Col md="10">
-            <NavbarToggler className="nav-button" onClick={toggle} />
+            <NavbarToggler style={{width: "60px"}} className="nav-button" onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav style={{margin: "auto", paddingTop: "24px"}} className="ms-auto" navbar>
                   <NavItem>
