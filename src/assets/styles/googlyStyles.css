@@ -1,5 +1,6 @@
 :root{
     --googly-purple: #635eae;
+    /* --googly-purple: #635eae; */
     --white: white;
     /****** DEFINE SITE-WIDE VARIABLES *****/
     --white: white;
@@ -75,8 +76,10 @@
     margin-bottom: 12px;
   }
   footer{
-    padding: 62px;
-    padding-top: 9rem;
+    margin-top: 6rem;
+    border-top: solid 1px var(--white);
+    padding-top: 4rem;
+    padding-bottom: 2rem;
   }
   .grid{
     display: grid;
@@ -100,4 +103,8 @@
     height: auto;
     display: block;
     margin: 0 auto 12px;
+  }
+
+  .xl-font{
+    font-size: 3rem;
   }

@@ -9,12 +9,15 @@ const Footer = () => {
         <footer>
             <Container>
                 <Row>
-                    <Col>
+                    <Col className="text-center" md="2">
+                        <i class="fa-brands fa-amazon xl-font"></i>
+                    </Col>
+                    <Col className="text-center">
                         <p>&copy; 2024 Googly Press</p>
                     </Col>
-                </Row>
-                <Row className="text-center">
-                    <p>&copy; 2024 Googly Press</p>
+                    <Col className="text-center" md="2">
+                        <i class="fa-regular fa-envelope xl-font"></i>
+                    </Col>
                 </Row>
             </Container>
         </footer>
