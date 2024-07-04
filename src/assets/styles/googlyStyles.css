@@ -7,6 +7,7 @@
     --myPurple: #635eae;
     --orange: orange;
     --black: black;
+    --grey: rgb(202, 189, 254);
     --grid-template4-2: grid-template-columns: 1fr 1fr 1fr 1fr;
     /*SPACING VARIABLES*/
     --body-width: 75%;
@@ -27,6 +28,9 @@
     margin: auto;
     background: var(--googly-purple);
     color: var(--white);
+ }
+ a{
+  color: var(--orange);
  }
  button{
   background-color: var(--orange);
@@ -80,6 +84,12 @@
     border-top: solid 1px var(--white);
     padding-top: 4rem;
     padding-bottom: 2rem;
+  }
+  footer a{
+    color: var(--white);
+  }
+  footer a:hover{
+    color: var(--grey);
   }
   .grid{
     display: grid;

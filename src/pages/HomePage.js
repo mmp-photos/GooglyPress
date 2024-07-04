@@ -4,10 +4,11 @@ import {
     Row,
     Col,
   } from 'reactstrap';
+import ReactMarkdown from 'react-markdown';
 import Eyes from '../components/Eyes';
 import DogApi from '../components/DogApi'
-import BuyButton from '../components/BuyButton';
 import catalogListings from '../assets/data/CatalogListings.js';
+import { default as HomePageText } from '../assets/data/HomePage.md';
 
 const HomePage = () => {
     const [ breedInfo, setBreedInfo ] = useState({
@@ -16,6 +17,8 @@ const HomePage = () => {
                                                     breedName: ''
                                                 });
     const [loading, setLoading] = useState(true);
+    const [ markdownContent, setMarkdownContent ] = useState(HomePageText);
+    const [ helmetTitle, setHelmetTitle ] = useState();
 
     useEffect(() => {
         const randomDog = catalogListings[Math.floor(Math.random()*catalogListings.length)];
@@ -41,7 +44,7 @@ const HomePage = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <p>Some text here: </p>
+                                <ReactMarkdown>{markdownContent}</ReactMarkdown>
                             </Col>
                         </Row>    
                     </Container>
